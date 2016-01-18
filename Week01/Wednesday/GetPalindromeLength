@@ -1,0 +1,20 @@
+
+public class GetPalindromeLength {
+	public static int getPalindromeLength(String input){
+		int count = 0;
+		for(int i=0; i<input.length(); i++){
+			if(input.charAt(i)=='*'){
+				while(count+i<input.length() && i-count>=0 && input.charAt(i+count)==input.charAt(i-count)){
+					count++;
+				}
+				break;
+			}
+		}
+		return count-1;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(getPalindromeLength("sazz*zzad"));
+	}
+
+}
