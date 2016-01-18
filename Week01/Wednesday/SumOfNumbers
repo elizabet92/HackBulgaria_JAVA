@@ -1,0 +1,29 @@
+
+public class SumOfNumbers {
+	public static int sumOfNumbers(String input){
+		int num = 0;
+		String str = "0";
+		int sum = 0;
+		
+		for(int i=0; i<input.length(); i++){
+			if((input.charAt(i) >= '0') && (input.charAt(i) <= '9')){
+				str = str + input.charAt(i);
+			}
+			else {
+				num = Integer.parseInt(str);
+				sum = sum + num;
+				str = "0";
+			}
+			
+		}
+		num = Integer.parseInt(str);
+		sum = sum + num;
+		return sum;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(sumOfNumbers("ab12abbab15ababababab5"));
+
+	}
+
+}
