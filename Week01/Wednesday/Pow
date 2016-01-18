@@ -1,0 +1,19 @@
+
+public class Pow {
+	public static long pow(int a, int b){
+			long result = 1;
+			if (b>0){
+			for(int i=0; i<b; i++){
+				result *= a;
+				}
+			 return result;
+		}
+			System.out.println("Enter a positive exponent!");
+		return 0;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(pow(-2,-5));
+	}
+
+}
