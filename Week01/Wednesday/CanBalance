@@ -1,0 +1,28 @@
+
+public class CanBalance {
+
+	public static boolean canBalance(int[] numbers){
+		int sum = 0;
+		int arraySum = 0;
+		for(int i=0; i<numbers.length; i++){
+			sum += numbers[i];
+		}
+		if(sum%2!=0){ 
+			return false;
+		}
+		else 
+			for(int j=0; j<numbers.length; j++){
+				arraySum += numbers[j];
+				if(sum/2==arraySum){	
+					return true;
+			}
+		}		
+		return false;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] array = {1,1,1,1,2};
+		System.out.println(canBalance(array));
+	}
+
+}
