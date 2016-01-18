@@ -1,0 +1,34 @@
+
+public class IsAnagram {
+	
+	public static String sort(String str){
+		char temp;
+		char[] arr = str.toCharArray();
+		for(int i=0; i<arr.length; i++){
+			for(int j=i+1; j<arr.length; j++){
+				if(arr[i]>arr[j]){
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+				}
+			}
+		}
+		
+		return (String.valueOf(arr));
+		//return arr.toString();
+	}
+	
+	public static boolean isAnagram(String a, String b){
+		a=sort(a);
+		b=sort(b);
+		if(a.length()!=b.length()) return false;
+		for(int i =0;i<a.length();i++)
+			if(a.charAt(i)!=b.charAt(i)) return false;
+		return true;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(isAnagram("baba", "abba"));
+	}
+
+}
