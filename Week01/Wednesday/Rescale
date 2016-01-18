@@ -1,0 +1,28 @@
+
+
+public class Rescale {
+	static int[][] rescale(int[][] original, int newWidth, int newHeight){
+		double sf = 0;
+		int[][] result = new int[newWidth][newHeight];
+		sf = (double)original[0].length/newHeight;
+		for(int i=0; i<newWidth; i++)
+			for(int j=0; j<newHeight; j++){
+				int x = (int)(Math.min(Math.round(i*sf),original.length-1));
+				int y = (int) (Math.min(Math.round(j*sf),original[0].length-1));
+				result[i][j] = original[x][y];
+			}
+		return result;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int input[][] = {{0,0,0,0,0,0},{0,1,0,1,0,0},{0,0,1,1,0,0},{0,0,0,0,1,0},{0,0,0,0,0,1}};
+		int a[][] = rescale(input,15,18);
+	for(int i=0; i<a.length; i++){
+		for(int j=0; j<a[i].length; j++){
+			System.out.print(a[i][j]+" ");
+		}
+		System.out.println();
+		}
+	}
+}
+	
