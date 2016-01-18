@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class DoubleFactorial {
+	
+	public static int Factorial(int n){
+		int fact = 1;
+		if(n>0){
+		for(int i=2; i<=n; i++)
+		fact = fact*i;
+		return fact;
+		}
+		else System.out.println("The number must be positive!");
+		return 0;
+	};
+	public static int doubleFactorial()
+	{	
+		int n;
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		if (n>0){
+			sc.close();
+		return Factorial(Factorial(n));
+		}
+		else System.out.println("The number must be positive!");
+		sc.close();
+		return 0;
+	};
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int result = (doubleFactorial());
+		if(result!=0) {
+			System.out.println(result);
+		}
+	}
+
+}
