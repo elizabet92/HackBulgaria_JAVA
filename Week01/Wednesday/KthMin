@@ -1,0 +1,23 @@
+
+public class KthMin {
+	public static int kthMin(int k, int[] array){
+		for(int i=0; i<array.length; i++){
+			for(int j=i+1;j<array.length;j++){
+				if(array[i]>array[j]){
+					int temp = array[i];
+					array[i]=array[j];
+					array[j]=temp;
+				}
+			}
+		}
+		return array[k-1];
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = {2,7,4,9,1,2,5,7,0,1,3,5,9};
+		int  num = 5;
+		System.out.println(kthMin(num, arr));
+
+	}
+
+}
