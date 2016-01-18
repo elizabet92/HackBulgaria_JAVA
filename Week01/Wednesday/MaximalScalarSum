@@ -1,0 +1,33 @@
+
+public class MaximalScalarSum {
+	
+public static void sort(int[] array){
+	for(int i=0; i<array.length; i++){
+		for(int j=i+1; j<array.length; j++){
+			if(array[i]>array[j]){
+				int temp;
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+	}
+}
+	public static long maximalScalarSum(int[] a, int[] b){
+		long maxsum = 0;
+			sort(a);
+			sort(b);
+			for(int i=0; i<a.length; i++)
+			for(int j=0; j<b.length; j++){
+				maxsum = a[0]*b[0] + a[1]*b[1] + a[2]*b[2];
+			}
+		return maxsum;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] A = {7, 1, 4};
+		int[] B = {2, 2, 3};
+		System.out.println(maximalScalarSum(A, B));
+	}
+
+}
