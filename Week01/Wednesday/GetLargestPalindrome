@@ -1,0 +1,26 @@
+public class GetLargestPalindrome {
+	public static boolean IsPalindrome(String a1){
+		String a2 = "";
+		int length = a1.length();
+		for(int i = length-1; i>=0; i--)
+		{
+			a2 = a2 + a1.charAt(i);
+		}
+		return (a1.equals(a2));
+	}
+		public static long getLargestPalindrome(long n){
+			for(long j=n-1; j>0; j--){
+				String str = Long.toString(j);
+			if(IsPalindrome(str)){
+				long jj = Long.parseLong(str);
+				return jj;
+			}
+		}
+			return 0;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(getLargestPalindrome(235623));
+	}
+
+}
