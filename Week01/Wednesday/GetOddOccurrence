@@ -1,0 +1,40 @@
+
+public class GetOddOccurrence {
+	
+	public static int getOddOccurence(int[] array){
+		for(int i=0; i<array.length; i++){
+			for(int j=i+1; j<array.length; j++){
+			if(array[i]>array[j]){
+				int temp;
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+				}
+			}
+		}
+
+		int br = 1;
+		int chislo;
+		chislo = array[0];
+		for(int k=1; k<array.length; k++){
+			if(array[k] == chislo){
+				br++;
+			}
+			else if(br%2 != 0){
+				return chislo;
+			}
+			else {
+				chislo = array[k];
+				br=1;
+			}
+		}
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = {1,5,2,1,5,4,9,9,9,9,2,4,5};
+		System.out.println(getOddOccurence(arr));
+	}
+
+}
